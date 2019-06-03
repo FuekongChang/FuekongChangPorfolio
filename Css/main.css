@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: goldenrod;
+  height: 6em;
+  margin: 0;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.lo {
+  width: 40%;
+}
+
+.page {
+  /*    margin: 0 auto;*/
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+li {
+  list-style-type: none;
+  margin-right: 5%;
+  margin-left: 5%;
+  display: flex;
+}
+
+li>a {
+  color: black;
+  display: block;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 1em;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.co {
+  margin-right: 10%;
+}
+
+.vl {
+  height: 6em;
+  border-left: 2px solid black
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+ height: 100%;
+    justify-content: center;
+    align-items: stretch;
+    align-content:stretch;
+}
+.hometitle {
+    font-size: 2em;
+  width: 95%;
+    height: 50%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: center;
+}
+.homepage1{
+    font-size: 2em;
+    width: 95%;
+    height: 50%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: center;
+    font-size: 300%;
+  margin: 1em;
+    border: 1em;
+    padding: 1em;
+    background-color: darkgray;
+}
+.homepage2{
+    font-size: 2em;
+    width: 20%;
+    height: 50%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: left;
+    padding:1%;
+    margin:5%;
+    border:1%;
+    align-self: flex-start;
+  margin: 1em;
+    border: 1em;
+    padding: 1em;
+      background-color: darkgray;
+}
+
+.homepage2 p {
+    font-family: 'Karla';
+}
+
+.header1{
+    font-size: 2em;
+  width: 95%;
+    height: 50%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: center;
+}
+.header2{
+     font-size: 2em;
+   width: 95%;
+    height: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: center;
+    padding:1%;
+    margin:1%;
+    border:1%;
+    align-self: flex-end;
+}
+.paragraph{
+    font-size: 2em;
+    width: 1%;
+    height: 1%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: left;
+    padding:2%;
+    margin:5%;
+    border:2%;
+    align-self: flex-start;
+    float: left;
+    background-color: darkgray;
+}
+.paragraph p {
+    font-family: 'Karla';
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 50%;
+  position: center;
+  margin: auto;
+    max-height: 50%;
+    background-size: cover;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: goldenrod;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: goldenrod;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.header3{
+    font-size: 2em;
+  width: 95%;
+    height: 50%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: left;
+    padding:1%;
+    margin:1%;
+    border:1%;
+    align-self: flex-start;
+}
+.header3 h2 {
+    font-family: 'Karla';
+}
+.extra {
+    font-size: 2em;
+    width: 50%;
+    height: 25%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: left;
+    padding:2em;
+    margin:1em;
+    border:2em;
+    float: center;
+      flex-grow: 1;
+    flex-shrink: ;
+    text-align: left;
+      background-color: darkgray;
+}
+.extra p {
+    font-family: 'Karla';
+}
+.paragraph2{
+    font-size: 2em;
+    width: 50%;
+    height: 25%;
+    flex-grow: 1;
+    flex-shrink: ;
+    text-align: left;
+    padding:2em;
+    margin:1em;
+    border:2em;
+    float: center;
+      flex-grow: 1;
+    flex-shrink: ;
+    text-align: center;
+      background-color: darkgray;
+}
+.paragraph2 p {
+    font-family: 'Karla';
+}
+/*Footer*/
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background-color: beige;
+  padding-top: .1em;
+  padding-bottom: 3em;
+}
+
+.foot-info {
+  text-align: center;
+  margin-top: 2%;
+  word-spacing: 3px;
+  line-height: 1.4;
+  font-size: 1.1em;
+}
+
+.ser-intro {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 2em;
+}
+
+/* .parallax-ser {
+  background-image: url(pic/road.jpg);
+  height: 350px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+/* .sol {
+  text-align: center;
+  padding-top: 2em;
+  font-size: 2.4em;
+  color: black;
+  margin: 0;
+  font-weight: 900;
+  text-shadow: 1px 1px white;
+} */
+
+.ser1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: flex-start;
+  max-width: 70%;
+  margin-top: 5%;
+  line-height: 27px;
+}
+
+.single {
+  width: 100%;
+  margin-right: 7%;
+  background-color: moccasin;
+  padding: 2em;
+  height: 15em;
+}
+
+.team {
+  width: 100%;
+  background-color: moccasin;
+  padding: 2em;
+  height: 15em;
+}
+
+.ser-h3 {
+  font-size: 1.5em
+}
+
+.ser-text {
+  font-size: 1.3em;
+  word-spacing: 2px;
+}
+
+.truck {
+  text-align: center;
+  margin-top: 4%;
+}
+
+.ser2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: flex-start;
+  max-width: 70%;
+  margin-top: 3%;
+  line-height: 27px;
+  margin-bottom: 3%;
+}
+
+.reefer {
+  background-image: url(pic/thermo.jpg);
+  max-width: 100%;
+  height: 18em;
+}
+
+.dry {
+  background-image: url(pic/dry3.jpg);
+  max-width: 100%;
+  height: 18em;
+}
+
+.cas {
+  width: 100%;
+  margin-right: 7%;
+  background-color: moccasin;
+  padding: 2em;
+}
+
+.ken {
+  width: 100%;
+  max-height: 50em;
+  background-color: moccasin;
+  padding: 2em;
+}
+
+.page2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: flex-start;
+  max-width: 70%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.con-form {
+  width: 100%;
+  margin-right: 7%;
+  /* background-image: url(pic/dust_scratches.png); */
+  padding: 2em;
+  line-height: 2em;
+}
+
+input {
+  height: 1.5em;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  font-size: 1em;
+}
+
+#reason {
+  height: 1.5em;
+  width: 51%;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+  font-size: 1em;
+}
+
+option {
+  width: 50%;
+}
+
+.form {
+  font-size: 1.5em;
+  display: block;
+  line-height: 1.5em;
+}
+
+#comment {
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 1.3em;
+}
+
+.parallax-c {
+  /* background-image: url(pic/dust_scratches.png); */
+  min-height: 27em;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.con-info {
+  color: black;
+  position: absolute;
+  left: 20%;
+  top: 13%;
+  max-height: 50%;
+  max-width: 60%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1%;
+  font-size: 2.4em;
+  letter-spacing: 1px;
+}
+
+.body-c {
+  background-image: url(pic/dust_scratches.png);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.address {
+  text-align: center;
+  margin-top: -2em;
+}
+
+.address-h {
+  font-size: 2em;
+}
+
+.address-p {
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
