@@ -22,7 +22,7 @@
         }
     }
     else {
-        include("contact.php");
+        include("pages/contact.php");
     }
 
     require("footer.php");

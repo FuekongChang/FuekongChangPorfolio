@@ -16,6 +16,7 @@
             <li><a href="connect-home.php">Home</a></li>
             <!--            <div class="vl"></div>-->
             <li><a href="connect-aboutme.php">About Me</a></li>
+            <li><a href="connect-portfolio.php">Portfolio</a></li>
             <!--            <div class="vl"></div>-->
             <li class="co"><a href="connect-con.php">Contact</a></li>
         </div>

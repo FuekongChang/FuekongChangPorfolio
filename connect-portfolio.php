@@ -12,7 +12,7 @@
 
     if(isset($_GET['page'])){
         $page = $_GET['page'];
-        if(file_exists("Content/$aboutme.php")){
+        if(file_exists("Content/$portfolio.php")){
 
             include("Content/$page.php");
 
@@ -22,7 +22,7 @@
         }
     }
     else {
-        include("pages/aboutme.php");
+        include("pages/portfolio.php");
     }
 
     require("footer.php");

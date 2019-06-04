@@ -10,31 +10,29 @@
 <body>
   <div class="flex-container">
         <div class="hometitle">
-            <h1>Fuekong Chang</h1>
+            <h1>Portfolio</h1>
         </div>
         <div class="homepage1">
-            <p><strong>Welcome!</strong>Well for starters let me say a few things about myself, I work hard at what I try to accomplish, and I can take care of a team base exercise or task if needed one and also  Im a JROTC cadet that took care of his own troop before so I have skills in leadership and in communication,but for another time . Please enjoy my website.</p>
+            <p>This part of my website is mosly for wanting to get more information about me and my skills.</p>
         </div>
         <div class="homepage2">
-            <p>I'm a junior now senior that goes to both CART and Mclane high school and I enjoy every second of it
-.</p>
-            <p>I joined CART to learn more about the coding class that they had to reach for my goal in becoming a game coder and a game designer.</p>
+            <p>I done some writing and there are some in the slideshow.</p>
         </div>
         <div class="paragraph">
-            <p>I have a few skills like a hard worker, a faster worker and a good teammate and as well as a great talker to people ect...</p>
+            <p>I done other things as well besides the coding and i been apart of many of CART sponcered activitys.</p>
         </div>
         <div class="header2">
-            <h2>My Dream</h2>
+            <h2>Resume</h2>
         </div>
         <div class="paragraph2">
-            <p>My dream as a little kid was to always try to make people happy and what made me happy was playing video games so I wanted a make a great game that people would love and their kids too but I'll get more into that later.
+            <p>I have a picture of my resume for you to cover.
 </p>
-        </div>
+      </div><div class=resume></div>
         <div class="header3">
-            <h2>Extra Information</h2>
+            <h2>Html/Css/Javascript</h2>
         </div>
         <div class="extra">
-            <p>If you want more information about me please take a look at my other pages.</p>
+            <p>I </p>
         </div>
     </div>
     <div class="slideshow-container">

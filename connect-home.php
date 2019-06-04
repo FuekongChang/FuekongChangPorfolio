@@ -22,7 +22,7 @@
         }
     }
     else {
-        include("index.php");
+        include("pages/index.php");
     }
 
     require("footer.php");
