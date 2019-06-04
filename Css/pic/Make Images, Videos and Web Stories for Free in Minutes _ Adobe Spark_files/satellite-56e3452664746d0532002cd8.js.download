@@ -1,0 +1,176 @@
+/******************************************************************************
+ * Adobe DTM Data Layer Version 1.0
+ * Created by Chris Luka, Enterprise Architect, Adobe Consulting Services
+ *
+ * This code provides a standardized data layer for all DTM services, along
+ * with several helper routines for handling asynchronous web applications &
+ * in-page activity tracking.
+ *****************************************************************************/
+
+/******************************************************************************
+ * Plugins -- Add any plugins here.  Leverage the example syntax to connect the
+ * plugins to your company's _satellite object.
+ ******************************************************************************/
+
+// Register plugins via the following syntax:
+//_satellite.adb.plugins.RegisterPlugin([plugin name],[plugin fn]);
+function _dtm_register_plugins() {
+    var w = window;
+
+    _satellite.adb.plugins.RegisterPlugin('setCampaign', function() {
+
+        // s.campaign = s.Util.getQueryParam("trackingid") || s.Util.getQueryParam("trackingId")|| s.Util.getQueryParam("r");
+
+        var campaign = s.Util.getQueryParam("trackingid") || s.Util.getQueryParam("trackingId") || s.Util.getQueryParam("r") || s.Util.getQueryParam("samcap_id") ;
+        s.campaign = SL._getValOnce(campaign, 'spark_campaign', 0);
+
+    });
+
+    _satellite.adb.plugins.RegisterPlugin('resetCampaign', function() {
+
+        s.campaign = '';
+
+    });
+
+    _satellite.adb.plugins.RegisterPlugin('track', function() {
+
+        _satellite.adb.plugins.adbToContextData(adb, 'adb');
+
+        s.t();
+        s.contextData = {};
+
+        // Global Production capture of various additional data
+        if (
+            w.s_adobe &&
+            w.adb &&
+            w.adb.event &&
+            w.adb.event.eventInfo &&
+            w.adb.event.eventInfo.eventName
+        ) {
+            var
+                s_adobe_linkName,
+                linkTrackEventsBackup,
+                eventsBackup;
+
+            var pName = s_adobe.pageName.split(":");
+            if (pName[pName.length - 1].match(/\d+/ig)) {
+                s_adobe.pageName = s_adobe.pageName.substring(0, s_adobe.pageName.lastIndexOf(':'))
+
+            }
+            if (w.adb.event.eventInfo.eventName === 'landing:viewedLandingPage') {
+                s_adobe_linkName = s_adobe.prop3 + '_action:landing:viewedLandingPage';
+            } else if (w.adb.event.eventInfo.eventName === 'landing:viewedPage') {
+                s_adobe_linkName = s_adobe.prop3 + '_action:landing:viewedPage';
+            } else if (w.adb.event.eventInfo.eventName === 'auth:firstSignIn') {
+                linkTrackEventsBackup = s_adobe.linkTrackEvents;
+                s_adobe.linkTrackEvents = (s_adobe.linkTrackEvents ? s_adobe.linkTrackEvents + ',' : '') + 'event12,event84';
+                eventsBackup = s_adobe.events;
+                s_adobe.events = (s_adobe.events ? s_adobe.events + ',' : '') + 'event12,event84';
+                s_adobe_linkName = s_adobe.prop3 + '_action:auth:firstSignIn';
+            } else if (w.adb.event.eventInfo.eventName === 'projectCreated') {
+                s_adobe_linkName = s_adobe.prop3 + '_action:projectCreated';
+            } else if (
+                w.adb.event.eventInfo.eventName === 'Sharing Action' &&
+                w.adb.projectm &&
+                w.adb.projectm.eventData &&
+                w.adb.projectm.eventData.eventAction
+            ) {
+                s_adobe_linkName = s_adobe.prop3 + '_action:share';
+                if (w.adb.projectm.eventData.eventAction === 'Content Publishes') {
+                    s_adobe_linkName += ':contentPublish';
+                } else if (w.adb.projectm.eventData.eventAction === 'Social Shares') {
+                    s_adobe_linkName += ':social';
+                }
+            }
+
+            if (s_adobe_linkName) {
+                s_adobe.tl(true, 'o', s_adobe_linkName);
+            }
+
+            s_adobe.linkTrackEvents = linkTrackEventsBackup;
+            s_adobe.events = eventsBackup;
+        }
+
+    });
+
+
+
+    _satellite.adb.plugins.RegisterPlugin('trackLink', function(object, linkName, linkType, variableOverrides, doneAction) {
+
+        _satellite.adb.plugins.adbToContextData(adb, 'adb');
+
+        s.tl(object, linkType, linkName, variableOverrides, doneAction);
+        s.campaign = '';
+        // Global Production capture of various additional data
+        if (
+            w.s_adobe &&
+            w.adb &&
+            w.adb.event &&
+            w.adb.event.eventInfo &&
+            w.adb.event.eventInfo.eventName
+        ) {
+            var
+                s_adobe_linkName,
+                linkTrackEventsBackup,
+                eventsBackup;
+            var pName = s_adobe.pageName.split(":");
+            if (pName[pName.length - 1].match(/\d+/ig)) {
+                s_adobe.pageName = s_adobe.pageName.substring(0, s_adobe.pageName.lastIndexOf(':'))
+
+            }
+            if (w.adb.event.eventInfo.eventName === 'landing:viewedLandingPage') {
+                s_adobe_linkName = s_adobe.prop3 + '_action:landing:viewedLandingPage';
+            } else if (w.adb.event.eventInfo.eventName === 'landing:viewedPage') {
+                s_adobe_linkName = s_adobe.prop3 + '_action:landing:viewedPage';
+            } else if (w.adb.event.eventInfo.eventName === 'auth:firstSignIn') {
+                linkTrackEventsBackup = s_adobe.linkTrackEvents;
+                s_adobe.linkTrackEvents = (s_adobe.linkTrackEvents ? s_adobe.linkTrackEvents + ',' : '') + 'event12,event84';
+                eventsBackup = s_adobe.events;
+                s_adobe.events = (s_adobe.events ? s_adobe.events + ',' : '') + 'event12,event84';
+                s_adobe_linkName = s_adobe.prop3 + '_action:auth:firstSignIn';
+            } else if (w.adb.event.eventInfo.eventName === 'projectCreated') {
+                s_adobe_linkName = s_adobe.prop3 + '_action:projectCreated';
+            } else if (
+                w.adb.event.eventInfo.eventName === 'Sharing Action' &&
+                w.adb.projectm &&
+                w.adb.projectm.eventData &&
+                w.adb.projectm.eventData.eventAction
+            ) {
+                s_adobe_linkName = s_adobe.prop3 + '_action:share';
+                if (w.adb.projectm.eventData.eventAction === 'Content Publishes') {
+                    s_adobe_linkName += ':contentPublish';
+                } else if (w.adb.projectm.eventData.eventAction === 'Social Shares') {
+                    s_adobe_linkName += ':social';
+                }
+            }
+
+            if (s_adobe_linkName) {
+                s_adobe.tl(true, 'o', s_adobe_linkName);
+            }
+
+            s_adobe.linkTrackEvents = linkTrackEventsBackup;
+            s_adobe.events = eventsBackup;
+        }
+
+    });
+
+
+
+_satellite.adb.plugins.RegisterPlugin('adbToContextData', function(obj, prefix) {
+
+
+    for (var i in obj) {
+
+        if (!obj.hasOwnProperty(i)) continue;
+        // console.log('i: ' + i + ', ' + prefix);
+        s.contextData[prefix + '.' + i] = (typeof(obj[i]) === "boolean") ? obj[i].toString() : obj[i];
+        if (typeof obj[i] === 'object') {
+            _satellite.adb.plugins.adbToContextData(obj[i], prefix + '.' + i);
+        }
+    }
+});
+
+// End of plugins
+
+
+}

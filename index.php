@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Uppal Transport</title>
+    <title>Fuekong Chang</title>
     <link rel="stylesheet" href="Css/main.css">
 </head>
 
@@ -34,7 +34,7 @@
             <h2>Extra Information</h2>
         </div>
         <div class="extra">
-            <p>If you want more information about our service take a look at my other pages.</p>
+            <p>If you want more information about me please take a look at my other pages.</p>
         </div>
     </div>
     <div class="slideshow-container">
@@ -42,31 +42,31 @@
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 5</div>
-            <img src="" style="width:100%">
+            <img src="Css/pic/a7848302-bf20-4ac1-ab49-5ea6046c1512.jpg" style="width:100%">
             <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 5</div>
-            <img src="" style="width:100%">
+            <img src="Css/pic/346fe1ee-8ae8-4507-a2de-d30b158e11a2.jpg" style="width:100%">
             <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 5</div>
-            <img src="" style="width:100%">
+            <img src="Css/pic/8e011502-290e-4de5-b3fb-4ffc761af4cd.jpg" style="width:100%">
             <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">4 / 5</div>
-            <img src="" style="width:100%">
+            <img src="Css/pic/4f1b2bf8-1de5-4443-a6f6-6634f3309a6c.png" style="width:100%">
             <div class="text"></div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">5 / 5</div>
-            <img src="" style="width:100%">
+            <img src="Css/pic/Pro-Dress-Photo-27.jpg" style="width:100%">
             <div class="text"></div>
         </div>
         <!-- Next and previous buttons -->

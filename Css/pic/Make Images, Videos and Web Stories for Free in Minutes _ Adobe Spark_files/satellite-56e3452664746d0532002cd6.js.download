@@ -1,0 +1,56 @@
+/******************************************************************************
+* Adobe DTM Data Layer Version 1.0
+* Created by Chris Luka, Enterprise Architect, Adobe Consulting Services
+*
+* This code provides a standardized data layer for all DTM services, along
+* with several helper routines for handling asynchronous web applications &
+* in-page activity tracking.
+*****************************************************************************/
+
+/******************************************************************************
+* Configuration -- Adjust these settings to match your implementation
+*****************************************************************************/
+
+// Configure Analytics
+//var s_account = 'adbemmarvelweb.rebootdev2';
+
+var s_url=document.location.hostname.toString();
+
+if(s_url.match(/projectm\.adobe\.com/)) {
+	var s_account="adbemmarvelweb.pilot";}
+else if (
+  s_url.match(/slate\.adobe\.com/) ||
+  s_url.match(/spark\.adobe\.com/) ||
+  s_url.match(/blog\.adobespark\.com/) ){ 
+  var s_account="adbemmarvelweb.prod";
+}
+else { var s_account="adbemmarvelweb.rebootdev2";}
+
+var s = s_gi(s_account);
+
+s.trackOffline=true;
+
+s.trackingServer='stats.adobe.com';
+s.trackingServerSecure='sstats.adobe.com';
+
+// This aliases the adb object inside the _satellite object
+var _dtm_data_object = adb;
+
+// Adobe Dynamic Tag Management creates a variable named _satellite to
+// hold all DTM functions & data.  We're going to create a sub-object within
+// _satellite.  Provide a name for that object here.
+var _dtm_data_layer_key = 'adb';
+    
+// If your page has asynchronous (AJAX) elements that are required to complete
+// for DTM to to operate correctly, set this variable to true
+var _dtm_async_activity = false;
+    
+// For pages with asynchronous behavior, we need to ensure that all the
+// async elements have a chance to "report in" before we start checking to
+// see if they've all completed.  Set the value below to the number of
+// milliseconds you want the "registration period" to last.  NOTE that
+// asynchronous events can still register after this period has passed, but
+// the system begins checking for completion once this delay is over, so a
+// "late registrant" might not be counted and you could lose potential data.
+var _dtm_async_delay = 500;
+

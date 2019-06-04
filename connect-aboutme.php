@@ -22,7 +22,7 @@
         }
     }
     else {
-        include("services.php");
+        include("aboutme.php");
     }
 
     require("footer.php");

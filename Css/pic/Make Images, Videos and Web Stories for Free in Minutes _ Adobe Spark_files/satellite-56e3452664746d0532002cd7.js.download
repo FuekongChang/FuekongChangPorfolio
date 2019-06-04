@@ -1,0 +1,36 @@
+/******************************************************************************
+* Adobe DTM Data Layer Version 1.0
+ * Created by Chris Luka, Enterprise Architect, Adobe Consulting Services
+ *
+ * This code provides a standardized data layer for all DTM services, along
+ * with several helper routines for handling asynchronous web applications &
+ * in-page activity tracking.
+ *****************************************************************************/
+
+/******************************************************************************
+ * Adobe DTM Data Layer -- Application-Specific Code
+ * Adapt these function to add additional functionality to your DTM instance
+ *****************************************************************************/
+
+// Adapt this first function to ensure that all required objects are in place and
+// ready for use.
+var _dtm_check_status_attempts = 0;
+function _dtm_check_status(){
+     
+  	// Assume everything's ready to go, then...
+    var status = true;
+
+    // ...validate that assumption
+    status = status && typeof adb.pageloadready != 'undefined' && adb.pageloadready;
+  
+    // Finally, return the result
+    return status;
+}
+  
+
+// This function should contain all code specific to your web application
+function _dtm_application(){
+      console.log("Data Layer : Fire Initial Page View");
+      _satellite.adb.plugins.track();
+}
+
